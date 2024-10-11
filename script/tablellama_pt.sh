@@ -30,7 +30,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --llm_num_virtual_tokens 8 \
 --patience 3
 
-# frozen + hytalm
+# frozen + tamo
 
 CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --dataset wtq_orig \

@@ -86,7 +86,7 @@ CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --llm_lora False
 
 
-# lora + hytalm
+# lora + tamo
 
 CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset structprobe \
@@ -106,7 +106,7 @@ CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --llm_frozen False \
 --llm_lora False
 
-# lora + hytalm
+# lora + tamo
 
 CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
@@ -125,7 +125,7 @@ CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --llm_frozen False \
 --llm_lora False
 
-# lora + hytalm
+# lora + tamo
 
 CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset fetaqa \
@@ -144,7 +144,7 @@ CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --llm_frozen False \
 --llm_lora False
 
-# lora + hytalm
+# lora + tamo
 
 CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset hitab \
@@ -163,7 +163,7 @@ CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --llm_frozen False \
 --llm_lora False
 
-# lora + hytalm
+# lora + tamo
 
 CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wikisql \

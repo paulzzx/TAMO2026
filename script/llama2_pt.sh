@@ -77,7 +77,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --patience 3
 
 
-# frozen + hytalm
+# frozen + tamo
 
 CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --dataset structprobe \
@@ -95,7 +95,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --gnn_num_layers 1 \
 --patience 3
 
-# frozen + hytalm
+# frozen + tamo
 
 CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --dataset wtq_orig \
@@ -113,7 +113,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --gnn_num_layers 1 \
 --patience 3
 
-# frozen + hytalm
+# frozen + tamo
 
 CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --dataset fetaqa \
@@ -130,7 +130,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --gnn_num_layers 1 \
 --patience 3
 
-# frozen + hytalm
+# frozen + tamo
 
 CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --dataset hitab \
@@ -147,7 +147,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --gnn_num_layers 1 \
 --patience 3
 
-# frozen + hytalm
+# frozen + tamo
 
 CUDA_VISIBLE_DEVICES=0 python table_train.py \
 --dataset wikisql \

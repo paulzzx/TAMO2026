@@ -9,7 +9,7 @@ To migrate the remarkable successes of Large Language Models (LLMs), the communi
 
 ## Datasets
 
-To evaluate the effectiveness of HyTaLM, we conduct extensive experiments on our proposed table structure understanding dataset **StructQA** and four public table reasoning benchmarks (HiTab, WikiTQ, WikiSQL, and FetaQA).  
+To evaluate the effectiveness of TAMO, we conduct extensive experiments on our proposed table structure understanding dataset **StructQA** and four public table reasoning benchmarks (HiTab, WikiTQ, WikiSQL, and FetaQA).  
 The **StructQA** dataset is located in the "``dataset/structProbe``" folder. In the early stages of the experiment, we named it structProbe, signifying that this is a probe testing LLM's understanding of table structures. For details on its construction, please refer to the paper.
 
 ## How to Run
