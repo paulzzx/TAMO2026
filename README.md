@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>Enhancing Generalization of LLMs on Table Reasoning via Multimodal Alignment</h2>
+  <h2>TAMO: Table as a Modality for Large Language Models</h2>
 </div>
 
 
