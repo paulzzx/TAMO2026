@@ -1,5 +1,6 @@
 import re
 import os
+import shutil
 import torch
 import pandas as pd
 import random
@@ -19,6 +20,24 @@ model_name = 'sbert'
 path = f'{global_path}/dataset/wtq'
 datas = datasets.load_from_disk(path + '/wikitablequestions')
 splits = ["train", "test", "validation"]
+
+
+def random_dataset():
+    random.seed(42)
+
+    def random_table(example):
+        random.shuffle(example["table"]["rows"])
+        indices = list(range(len(example["table"]["header"])))
+        random.shuffle(indices[1:])
+        indices = [0] + indices
+        example["table"]["header"] = [example["table"]["header"][i] for i in indices]
+        for i in range(len(example["table"]["rows"])):
+            example["table"]["rows"][i] = [example["table"]["rows"][i][j] for j in indices]
+        return example
+
+    new_datas = datas.map(random_table)
+    shutil.copytree(f'{global_path}/dataset/wtq', f'{global_path}/dataset/wtq_permute')
+    new_datas.save_to_disk(f'{global_path}/dataset/wtq_permute' + '/wikitablequestions')
 
 
 def textualize_graph(graph):
@@ -96,3 +115,5 @@ def step_two():
 if __name__ == '__main__':
     step_one()
     step_two()
+    # construct the permuted dataset
+    # random_dataset()

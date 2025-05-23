@@ -1,5 +1,6 @@
 import re
 import os
+import shutil
 import torch
 import pandas as pd
 import random
@@ -41,6 +42,7 @@ def random_dataset():
         return example
 
     new_datas = datas.map(random_table)
+    shutil.copytree(f'{global_path}/dataset/structProbe', f'{global_path}/dataset/structProbe_permute')
     new_datas.save_to_disk(f'{global_path}/dataset/structProbe_permute' + '/structProbe')
 
 
