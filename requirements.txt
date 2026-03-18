@@ -1,0 +1,42 @@
+# TAMO server runtime dependencies for CentOS 7 / glibc 2.17 / Python 3.9.
+# Recommended install order:
+# 1) install torch from the cu118 index
+# 2) install PyG extension wheels matching torch 2.2 + cu118
+# 3) install the remaining packages from this file
+#
+# Notes:
+# - `pyg-lib` is optional for this repo: it is not imported directly by the code.
+# - `torchvision`, `torchaudio`, `ogb`, `matplotlib`, and `nvitop` are intentionally omitted.
+
+# Step 1: torch
+torch==2.2.1+cu118
+
+# Step 2: PyG stack
+torch-geometric==2.6.1
+torch-scatter==2.1.2+pt22cu118
+torch-sparse==0.6.18+pt22cu118
+torch-cluster==1.6.3+pt22cu118
+torch-spline-conv==1.2.2+pt22cu118
+# Optional:
+# pyg-lib==0.4.0+pt22cu118
+
+# Step 3: Hugging Face / LLM stack
+transformers==4.36.2
+peft==0.8.2
+accelerate==0.27.2
+huggingface_hub==0.20.3
+sentencepiece==0.1.99
+
+# Step 3: data / preprocessing / evaluation
+datasets==2.16.1
+numpy==1.26.4
+pandas==1.5.3
+pyarrow==12.0.1
+scipy==1.10.1
+gensim==4.3.2
+wandb==0.16.6
+sacrebleu==2.4.0
+tqdm==4.66.2
+requests==2.31.0
+six==1.16.0
+pcst_fast==1.0.10

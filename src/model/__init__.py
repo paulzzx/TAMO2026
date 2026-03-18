@@ -1,25 +1,47 @@
-from src.model.llm import LLM
-from src.model.pt_llm import PromptTuningLLM
-from src.model.table_hypergraph_llm import TableHypergraphLLM
-
-from src.model.mistral import Mistral
-from src.model.table_hypergraph_mistral import TableHypergraphMistral
-from src.model.pt_mistral import PromptTuningMistral
-
 from src.global_path import global_path
 
+
+def _build_llm(*args, **kwargs):
+    from src.model.llm import LLM
+    return LLM(*args, **kwargs)
+
+
+def _build_pt_llm(*args, **kwargs):
+    from src.model.pt_llm import PromptTuningLLM
+    return PromptTuningLLM(*args, **kwargs)
+
+
+def _build_table_hypergraph_llm(*args, **kwargs):
+    from src.model.table_hypergraph_llm import TableHypergraphLLM
+    return TableHypergraphLLM(*args, **kwargs)
+
+
+def _build_mistral(*args, **kwargs):
+    from src.model.mistral import Mistral
+    return Mistral(*args, **kwargs)
+
+
+def _build_table_hypergraph_mistral(*args, **kwargs):
+    from src.model.table_hypergraph_mistral import TableHypergraphMistral
+    return TableHypergraphMistral(*args, **kwargs)
+
+
+def _build_pt_mistral(*args, **kwargs):
+    from src.model.pt_mistral import PromptTuningMistral
+    return PromptTuningMistral(*args, **kwargs)
+
 load_model = {
-    'inference_llm': LLM,
+    'inference_llm': _build_llm,
 
     # tablellama
-    'llm': LLM,
-    'pt_llm': PromptTuningLLM,
-    'table_hypergraph_llm': TableHypergraphLLM,
+    'llm': _build_llm,
+    'pt_llm': _build_pt_llm,
+    'table_hypergraph_llm': _build_table_hypergraph_llm,
 
     # mistral
-    'mistral': Mistral,
-    'table_hypergraph_mistral': TableHypergraphMistral,
-    'pt_mistral': PromptTuningMistral,
+    'mistral': _build_mistral,
+    'table_hypergraph_mistral': _build_table_hypergraph_mistral,
+    'pt_mistral': _build_pt_mistral,
 }
 
 # Replace the following with the model paths

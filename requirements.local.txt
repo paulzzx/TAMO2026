@@ -1,0 +1,45 @@
+# TAMO local development dependencies for macOS / Python 3.9.
+# Goal: make the codebase broadly runnable for local debugging.
+#
+# This file is intentionally looser than the Linux server environment.
+# It targets pure-text and general data/debug workflows first.
+#
+# For local pure-text runs, use:
+#   --model_name llm
+#   --model_name pt_llm
+#   --model_name mistral
+#   --model_name pt_mistral
+#
+# Hypergraph models additionally need compiled PyG extensions such as
+# `torch-scatter` and `torch-sparse`, which may require extra platform-specific
+# installation on macOS.
+
+torch>=2.2,<2.4
+transformers>=4.36,<4.38
+peft>=0.8,<0.9
+accelerate>=0.27,<0.28
+huggingface_hub>=0.20,<0.21
+sentencepiece>=0.1.99,<0.2
+
+datasets>=2.16,<2.17
+numpy>=1.26,<2
+pandas>=1.5,<2
+pyarrow>=12,<15
+scipy>=1.10,<1.12
+gensim>=4.3,<4.4
+wandb>=0.16,<0.17
+sacrebleu>=2.4,<2.5
+tqdm>=4.66,<5
+requests>=2.31,<3
+six>=1.16,<2
+pcst_fast>=1.0.10,<1.1
+
+# Pure Python package; useful for some dataset/graph utilities.
+torch-geometric>=2.5,<2.7
+
+# Optional macOS extras for hypergraph models:
+# torch-scatter
+# torch-sparse
+# torch-cluster
+# torch-spline-conv
+# pyg-lib
