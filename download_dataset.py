@@ -4,7 +4,7 @@ from src.global_path import global_path
 wikisql = datasets.load_dataset('wikisql', revision='refs/convert/parquet')
 wikisql.save_to_disk(f'{global_path}/dataset/wikisql/wikisql')
 
-wtq = datasets.load_dataset('wikitablequestions', revision='refs/convert/parquet')
+wtq = datasets.load_dataset('wikitablequestions')
 wtq.save_to_disk(f'{global_path}/dataset/wtq/wikitablequestions')
 
 fetaqa = datasets.load_dataset('DongfuTingle/FeTaQA')
