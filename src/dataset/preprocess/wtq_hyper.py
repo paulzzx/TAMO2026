@@ -100,6 +100,8 @@ def step_two():
             x_s = text2embedding(model, tokenizer, device, nodes.node_attr.tolist())
             x_t = text2embedding(model, tokenizer, device, hyperedges.hyperedge_attr.tolist())
             edge_index = torch.LongTensor([edges.src, edges.dst])
+            print("x_s.shape:", x_s.shape)
+            print("len(nodes):", len(nodes))
             assert x_s.shape[0] == len(nodes)
             assert x_t.shape[0] == len(hyperedges)
             data = BipartiteData(x_s=x_s, x_t=x_t, edge_index=edge_index)
