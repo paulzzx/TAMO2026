@@ -1,7 +1,7 @@
 
 # lora + pure text
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset structprobe \
 --second_dataset structprobe_permute \
 --prompt_type llama2 \
@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + pure text
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name llm \
@@ -34,7 +34,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + pure text
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset fetaqa \
 --prompt_type llama2 \
 --model_name llm \
@@ -50,7 +50,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + pure text
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset hitab \
 --prompt_type llama2 \
 --model_name llm \
@@ -66,7 +66,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + pure text
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wikisql \
 --prompt_type llama2 \
 --model_name llm \
@@ -83,7 +83,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + tamo
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset structprobe \
 --second_dataset structprobe_permute \
 --prompt_type llama2 \
@@ -102,7 +102,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + tamo
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -120,7 +120,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + tamo
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset fetaqa \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -138,7 +138,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + tamo
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset hitab \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -156,7 +156,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # lora + tamo
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wikisql \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \

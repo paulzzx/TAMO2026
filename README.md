@@ -24,11 +24,10 @@ bash requirements.sh
 
 2. Download Datasets and Models  
    **Datasets:** The code for downloading the Hugging Face version of the four public table reasoning benchmark datasets (HiTab, WikiTQ, WikiSQL, and FetaQA) is located in the file "``download_dataset.py``".  
-   **Models:** The script for downloading all the models used is contained within the "``download_models.sh``" file.
+   **Models:** The script for downloading all the models used is contained within the "``download_models.sh``" file. It downloads both the primary runtime backbones and the auxiliary local assets used by the repo, and Llama 2 downloads require Hugging Face access approval plus `huggingface-cli login`.
 
 3. Data Preprocess  
-   Run the "``./script/data_preprocesss.sh``" script to execute the data preprocess.
+   Run the "``./script/data_preprocess.sh``" script to execute the data preprocess. This preprocessing flow remains single-GPU and uses `GPU0`.
 
 4. Run Experiment  
-   All the experimental run scripts are located in the "``./script``" folder.
-
+   All the experimental run scripts are located in the "``./script``" folder. The intended train/inference hardware baseline is dual A800 80G with `GPU0` and `GPU1`, and the scripts are expected to run with `CUDA_VISIBLE_DEVICES=0,1`.

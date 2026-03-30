@@ -7,14 +7,15 @@ from torch.utils.data import DataLoader
 
 from src.utils.seed import seed_everything
 from src.config import parse_args_table_llama
-from src.model import load_model, llama_model_path
+from src.model import load_model
 from src.dataset import load_dataset
 from src.utils.evaluate import eval_funcs
 from src.utils.collate import collate_fn
-from table_train import cal_robustness
+from table_train import cal_robustness, validate_runtime_args
 
 
 def main(args):
+    validate_runtime_args(args)
 
     # Step 1: Set up seed
     seed = args.seed
@@ -34,7 +35,6 @@ def main(args):
 
     # Step 3: Build Model
     args.max_txt_len = 4096
-    args.llm_model_path = llama_model_path[args.llm_model_name]
     model = load_model[args.model_name](init_prompt=test_dataset.init_prompt, args=args)
 
     # # step 4. load from ck

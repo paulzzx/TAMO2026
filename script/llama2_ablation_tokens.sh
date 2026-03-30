@@ -1,7 +1,7 @@
 
 #################### number of tokens ####################
 # llama2
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # llama2
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -35,7 +35,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # llama2
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -52,7 +52,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # llama2
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -69,7 +69,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # llama2
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \
@@ -86,7 +86,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # llama2
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type llama2 \
 --model_name table_hypergraph_llm \

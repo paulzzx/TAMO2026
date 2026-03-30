@@ -1,7 +1,7 @@
 
 # inference
 
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0,1 python inference.py \
 --dataset wtq_orig \
 --prompt_type tablellama \
 --model_name llm \
@@ -16,7 +16,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
 
 # frozen + pure text
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --second_dataset wtq_permute \
 --prompt_type llama2 \
@@ -32,7 +32,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 # frozen + tamo
 
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --second_dataset wtq_permute \
 --prompt_type llama2 \

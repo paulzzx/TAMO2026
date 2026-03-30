@@ -4,8 +4,8 @@ import argparse
 def parse_args_table_llama():
     parser = argparse.ArgumentParser(description="table_graph_llama")
 
-    parser.add_argument("--model_name", type=str, default='table_graph_llm')
-    parser.add_argument("--project", type=str, default="project_table_graph_llm")
+    parser.add_argument("--model_name", type=str, default='llm')
+    parser.add_argument("--project", type=str, default="project_table_llm")
     parser.add_argument("--seed", type=int, default=42)
 
     parser.add_argument("--dataset", type=str, default='wtq')
@@ -27,6 +27,7 @@ def parse_args_table_llama():
     parser.add_argument("--eval_batch_size", type=int, default=8)
     parser.add_argument("--orig_csv_path", type=str, default='')
     parser.add_argument("--do_eval", type=str, default='False')
+    parser.add_argument("--expected_num_gpus", type=int, default=2)
 
     # LLM related
     parser.add_argument("--llm_model_name", type=str, default='7b')
@@ -50,4 +51,3 @@ def parse_args_table_llama():
 
     args = parser.parse_args()
     return args
-

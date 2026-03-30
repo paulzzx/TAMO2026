@@ -1,7 +1,7 @@
 
 # inference
 
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0,1 python inference.py \
 --dataset structprobe \
 --second_dataset structprobe_permute \
 --prompt_type tablellama \
@@ -17,7 +17,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
 
 # inference
 
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0,1 python inference.py \
 --dataset wtq_orig \
 --prompt_type tablellama \
 --model_name llm \
@@ -32,7 +32,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
 
 # inference
 
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0,1 python inference.py \
 --dataset fetaqa \
 --prompt_type tablellama \
 --model_name llm \
@@ -47,7 +47,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
 
 # inference
 
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0,1 python inference.py \
 --dataset hitab \
 --prompt_type tablellama \
 --model_name llm \
@@ -62,7 +62,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
 
 # inference
 
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0,1 python inference.py \
 --dataset wikisql \
 --prompt_type tablellama \
 --model_name llm \

@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader, SubsetRandomSampler
 from torch.nn.utils import clip_grad_norm_
 import random
 
-from src.model import load_model, llama_model_path
+from src.model import load_model
 from src.dataset import load_dataset
 from src.utils.evaluate import eval_funcs
 from src.config import parse_args_table_llama
@@ -20,6 +20,35 @@ from src.global_path import global_path
 
 import json
 from collections import defaultdict
+
+
+def validate_runtime_args(args):
+    from src.model import ensure_known_llm_key, ensure_known_model_key, resolve_llm_model_path
+
+    ensure_known_model_key(args.model_name)
+    ensure_known_llm_key(args.llm_model_name)
+    args.llm_model_path = resolve_llm_model_path(args.llm_model_name)
+    validate_visible_gpus(args.expected_num_gpus)
+
+
+def validate_visible_gpus(expected_num_gpus):
+    if expected_num_gpus <= 1:
+        return
+
+    visible = os.environ.get("CUDA_VISIBLE_DEVICES", "").strip()
+    requested = [gpu.strip() for gpu in visible.split(",") if gpu.strip()]
+    if len(requested) < expected_num_gpus:
+        raise RuntimeError(
+            f"This command expects at least {expected_num_gpus} visible GPUs, "
+            f"but CUDA_VISIBLE_DEVICES='{visible or '<unset>'}'."
+        )
+
+    if torch.cuda.device_count() < expected_num_gpus:
+        raise RuntimeError(
+            f"This command expects at least {expected_num_gpus} visible CUDA devices, "
+            f"but torch reports {torch.cuda.device_count()}. "
+            f"Target baseline: dual A800 80G on GPU0 and GPU1."
+        )
 
 
 def cal_robustness(Origin_res_path, Permute_res_path):
@@ -78,6 +107,8 @@ def cal_robustness(Origin_res_path, Permute_res_path):
 
 
 def main(args):
+    validate_runtime_args(args)
+
     # Step 1: Set up wandb
     seed = args.seed
     wandb.init(project=f"{args.project}",
@@ -107,7 +138,6 @@ def main(args):
                                         shuffle=False, collate_fn=collate_fn)
 
     # Step 3: Build Model
-    args.llm_model_path = llama_model_path[args.llm_model_name]
     model = load_model[args.model_name](init_prompt=train_dataset.init_prompt, args=args)
 
     # Step 4 Set Optimizer

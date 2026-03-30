@@ -1,7 +1,7 @@
 
 #################### number of tokens ####################
 # mistral
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type mistral \
 --model_name table_hypergraph_mistral \
@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # mistral
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type mistral \
 --model_name table_hypergraph_mistral \
@@ -35,7 +35,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # mistral
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type mistral \
 --model_name table_hypergraph_mistral \
@@ -52,7 +52,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # mistral
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type mistral \
 --model_name table_hypergraph_mistral \
@@ -69,7 +69,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # mistral
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type mistral \
 --model_name table_hypergraph_mistral \
@@ -86,7 +86,7 @@ CUDA_VISIBLE_DEVICES=0 python table_train.py \
 
 
 # mistral
-CUDA_VISIBLE_DEVICES=0 python table_train.py \
+CUDA_VISIBLE_DEVICES=0,1 python table_train.py \
 --dataset wtq_orig \
 --prompt_type mistral \
 --model_name table_hypergraph_mistral \

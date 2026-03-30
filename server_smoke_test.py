@@ -11,7 +11,7 @@ Checks:
 7) one tiny real generate call
 
 Environment variables:
-- SMOKE_MODEL_NAME: model key in src.model.llama_model_path, default "7b"
+- SMOKE_MODEL_NAME: runtime LLM key in src.model.llama_model_path_aliases, default "7b"
 - SMOKE_PROMPT_TYPE: default "llama2"
 - SMOKE_DATASET: default "structprobe"
 - SMOKE_SKIP_MODEL: "1" to skip real model loading
@@ -138,14 +138,11 @@ def check_real_model(model_name: str, prompt_type: str) -> None:
     print_header("Real Model Load")
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
-    from src.model import llama_model_path
+    from src.model import ensure_known_llm_key, resolve_llm_model_path
 
-    if model_name not in llama_model_path:
-        raise ValueError(f"unknown model key: {model_name}")
+    ensure_known_llm_key(model_name)
 
-    model_path = Path(llama_model_path[model_name])
-    if not model_path.exists():
-        raise FileNotFoundError(f"model path not found: {model_path}")
+    model_path = Path(resolve_llm_model_path(model_name))
 
     print("model key:", model_name)
     print("model path:", model_path)
